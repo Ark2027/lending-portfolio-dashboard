@@ -68,7 +68,7 @@ def _definitions() -> list[dict]:
          "An estimate, not a transaction total. No repayment records are collected, so this "
          "absorbs every reconciliation difference between the three inputs. Labeled as an "
          "estimate wherever it appears."),
-        ("Portfolio", "Months outstanding proxy", "Outstanding relative to disbursed, annualised",
+        ("Portfolio", "Months outstanding proxy", "Outstanding relative to disbursed, annualized",
          "12 * outstanding / disbursed", "Derived", "Partner", "Quarterly", "Low-medium",
          "Named for what it computes. This is not days sales outstanding and should not be "
          "compared against DSO benchmarks."),

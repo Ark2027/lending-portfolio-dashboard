@@ -297,7 +297,7 @@ def _partner_efficiency(loans: list[Loan]) -> list[dict]:
             "jobs": _r2(jobs),
             "jobs_per_million": _r2(jobs / (disbursed / 1e6)) if disbursed else 0.0,
             "outstanding_ratio": _rate(outstanding, disbursed),
-            # Outstanding over disbursed, annualised. This is not days sales
+            # Outstanding over disbursed, annualized. This is not days sales
             # outstanding and is named for what it actually is.
             "months_outstanding_proxy": _r2(12 * outstanding / disbursed) if disbursed else 0.0,
             "delinquent_outstanding": _r2(delinquent),

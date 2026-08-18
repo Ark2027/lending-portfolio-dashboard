@@ -31013,7 +31013,7 @@
    {
     "category": "Portfolio",
     "name": "Months outstanding proxy",
-    "measures": "Outstanding relative to disbursed, annualised",
+    "measures": "Outstanding relative to disbursed, annualized",
     "formula": "12 * outstanding / disbursed",
     "source": "Derived",
     "grain": "Partner",
