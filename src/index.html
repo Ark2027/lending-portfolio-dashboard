@@ -1,0 +1,977 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Community Lending Network — Portfolio Dashboard</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css?v=20260415a">
+  </head>
+  <body data-current-page="overview">
+    <a class="skip-link" href="#main">Skip to dashboard</a>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Dashboard pages">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">CLN</span>
+          <span class="brand-name">Community<br>Lending Network</span>
+        </div>
+        <nav class="nav-list" aria-label="Primary">
+          <button class="nav-item active" data-page="overview">Overview</button>
+          <button class="nav-item" data-page="funnel">CRM Funnel</button>
+          <button class="nav-item" data-page="geography">Geography</button>
+          <button class="nav-item" data-page="impact">Impact</button>
+          <button class="nav-item" data-page="partners">Partners</button>
+          <button class="nav-item" data-page="marketing">Marketing</button>
+          <button class="nav-item" data-page="matcher">Fee Reconciliation</button>
+          <button class="nav-item" data-page="analytics">Analytics</button>
+          <button class="nav-item" data-page="kpiGuide">KPI Guide</button>
+          <button class="nav-item" data-page="quality">Data Quality</button>
+        </nav>
+        <div class="sidebar-note">
+          <span class="dot"></span>
+          Demo dataset
+        </div>
+      </aside>
+
+      <main class="main" id="main">
+        <div class="demo-banner" role="note">
+          <strong>Demonstration build.</strong>
+          Every figure on this dashboard is synthetic. The lenders, borrowers, states and
+          amounts are generated from fixed distributions and describe no real organization
+          or person. Controls that would normally write to a server change the page for the
+          rest of your session and are not saved.
+          <a href="https://github.com/Ark2027/lending-portfolio-dashboard#readme">How it was built</a>
+        </div>
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Community Lending Network</p>
+            <h1 id="page-title">Executive Overview</h1>
+          </div>
+          <div class="topbar-right">
+            <div class="freshness">
+              <span>Last refresh</span>
+              <strong id="last-refresh">Loading</strong>
+            </div>
+            <button id="refresh-btn" class="refresh-btn" title="Refresh dashboard data">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1.5 2v4.5H6"/>
+                <path d="M2.3 10a6 6 0 1 0 .7-5L1.5 6.5"/>
+              </svg>
+            </button>
+          </div>
+        </header>
+
+        <section class="hero-band" aria-label="Dashboard summary">
+          <div>
+            <p class="eyebrow">Portfolio command center</p>
+            <h2>Performance, impact, partner health, and reporting readiness in one model.</h2>
+          </div>
+          <div class="hero-meta" id="hero-meta">Aggregate cache loading...</div>
+        </section>
+
+        <section class="page active overview-page internal-view" data-page-panel="overview" aria-label="Executive overview">
+          <div class="overview-lede" id="overview-lede"></div>
+          <div class="overview-toolbar">
+            <div class="overview-action" id="overview-action" data-overview-internal></div>
+            <div class="overview-purpose" id="overview-purpose"></div>
+            <div class="overview-toggle" role="group" aria-label="Overview view">
+              <button class="active" type="button" data-overview-mode="internal">Internal</button>
+              <button type="button" data-overview-mode="board">Board</button>
+            </div>
+          </div>
+          <div class="overview-as-of" id="overview-as-of"></div>
+          <section class="overview-board-strip" id="overview-board-strip" aria-label="Board snapshot"></section>
+          <section class="overview-narrative-export" id="overview-narrative-export" aria-label="Narrative summary"></section>
+          <div class="kpi-grid overview-kpi-grid" id="overview-kpis"></div>
+          <div class="overview-grid" data-overview-internal>
+            <article class="panel overview-briefing">
+              <div class="panel-header">
+                <h3>Morning Brief</h3>
+                <span>Executive read</span>
+              </div>
+              <div class="briefing-list" id="overview-briefing"></div>
+            </article>
+            <article class="panel attention-panel">
+              <div class="panel-header">
+                <h3>Attention Queue</h3>
+                <span>Internal follow-up</span>
+              </div>
+              <div class="attention-list" id="overview-attention"></div>
+            </article>
+          </div>
+          <section class="overview-jumps-panel" aria-label="Overview page shortcuts" data-overview-internal>
+            <div class="overview-section-header">
+              <h3>Where to Go Next</h3>
+              <span>Page shortcuts</span>
+            </div>
+            <div class="overview-jumps" id="overview-jumps"></div>
+          </section>
+          <div class="kpi-grid overview-velocity-grid" id="velocity-kpis"></div>
+          <div class="grid three overview-recycling">
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Origination Velocity</h3>
+                <span>Last quarter vs trailing 4Q avg</span>
+              </div>
+              <div class="insight-list" id="velocity-detail"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Capital Recycling</h3>
+                <span>Deployed → outstanding → repaid → charged off</span>
+              </div>
+              <div class="quality-list" id="capital-recycling"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Portfolio Concentration</h3>
+                <span>Partner HHI and geographic risk</span>
+              </div>
+              <div class="insight-list" id="concentration-overview"></div>
+            </article>
+          </div>
+          <div class="grid two overview-pulse">
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Originations Trend</h3>
+                <span>Quarterly, Live Data</span>
+              </div>
+              <div class="chart" id="originations-trend"></div>
+              <div class="chart-note" id="originations-trend-note"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Disbursed by Partner</h3>
+                <span>Top partners</span>
+              </div>
+              <div class="bar-list" id="partner-disbursed"></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="page" data-page-panel="funnel" aria-label="CRM funnel">
+          <div id="rds-stale-funnel"></div>
+          <div class="overview-toolbar crm-date-toolbar">
+            <label class="select-label">
+              <span>Lead window</span>
+              <select id="crm-date-preset">
+                <option value="last30">Last 30 days</option>
+                <option value="last90" selected>Last 90 days</option>
+                <option value="last180">Last 180 days</option>
+                <option value="ytd">Year to date</option>
+                <option value="all">All time</option>
+                <option value="custom">Custom</option>
+              </select>
+            </label>
+            <label class="select-label">
+              <span>Start date</span>
+              <input id="crm-date-start" type="date">
+            </label>
+            <label class="select-label">
+              <span>End date</span>
+              <input id="crm-date-end" type="date">
+            </label>
+            <div class="crm-date-summary" id="crm-date-summary"></div>
+            <button class="btn-download" id="crm-export-btn" type="button">Export CSV</button>
+          </div>
+          <div class="kpi-grid" id="crm-kpis"></div>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>CRM Pipeline Waterfall</h3>
+              <span>PRE_SCREEN volume flowing through each stage</span>
+            </div>
+            <div class="funnel-waterfall" id="crm-pipeline-waterfall"></div>
+          </article>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Funnel Conversion Rates by CDFI</h3>
+              <span>Approved, denied, discarded, unassigned, active — PRE_SCREEN stage</span>
+            </div>
+            <div class="matrix" id="crm-funnel-rates"></div>
+          </article>
+          <div class="grid two">
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Monthly PRE_SCREEN Demand Trend</h3>
+                <span>New applications over time</span>
+              </div>
+              <div class="chart" id="monthly-pre-screen-trend"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Application Stage Drop-off</h3>
+                <span>Where applicants stall</span>
+              </div>
+              <div class="bar-list" id="stage-abandonment"></div>
+            </article>
+          </div>
+          <div class="grid two">
+            <article class="panel">
+              <div class="panel-header">
+                <h3>PRE_SCREEN Status</h3>
+                <span>By CDFI</span>
+              </div>
+              <div class="matrix" id="crm-status-matrix"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Risk and Soft Pull</h3>
+                <span>Current</span>
+              </div>
+              <div class="split-list">
+                <div id="risk-list"></div>
+                <div id="soft-pull-list"></div>
+              </div>
+            </article>
+          </div>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Funnel Risk Flags</h3>
+              <span>High-urgency pipeline conditions requiring follow-up</span>
+            </div>
+            <div class="quality-list" id="funnel-risk-flags"></div>
+          </article>
+        </section>
+
+        <section class="page" data-page-panel="geography" aria-label="Geographic heat maps">
+          <div id="rds-stale-geo"></div>
+          <div class="crm-disclaimer-banner" id="geo-crm-disclaimer">
+            <div class="crm-disclaimer-icon">&#9888;</div>
+            <div class="crm-disclaimer-body">
+              <strong>CRM Data Covers Only a Portion of Funded Loans</strong>
+              <p>The majority of funded loans were originated through partner lender channels, not via the CRM pipeline. CRM-based comparisons (demand vs. deployment, state penetration rates) are <em>directional signals only</em> — they reflect pre-screen inquiries that entered the portal, not the full universe of borrowers served by partners. Do not treat CRM penetration rates as conversion metrics.</p>
+            </div>
+          </div>
+          <div class="grid geography-grid">
+            <article class="panel">
+              <div class="panel-header">
+                <h3>CRM Loan Demand by State</h3>
+                <span>PRE_SCREEN records — directional only</span>
+              </div>
+              <div class="state-map" id="crm-state-map"></div>
+              <div class="bar-list map-rank" id="crm-state-bars"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Disbursed by State and CDFI</h3>
+                <label class="select-label">
+                  <span>CDFI</span>
+                  <select id="cdfi-state-filter"></select>
+                </label>
+              </div>
+              <div class="state-map" id="impact-state-map"></div>
+              <div class="bar-list map-rank" id="impact-state-bars"></div>
+            </article>
+            <article class="panel full">
+              <div class="panel-header">
+                <h3>Demand vs Deployment Gap</h3>
+                <span>States with CRM demand but weak or no funded capital</span>
+              </div>
+              <div class="matrix" id="geo-gap-table"></div>
+            </article>
+            <article class="panel full">
+              <div class="panel-header">
+                <h3>State Market Penetration Rate</h3>
+                <span>Funded loans vs CRM demand ratio per state — CRM penetration is directional only; most funded loans did not originate through the CRM</span>
+              </div>
+              <div class="matrix" id="state-penetration-table"></div>
+            </article>
+            <article class="panel full">
+              <div class="panel-header">
+                <h3>Marketing Coverage Overlay</h3>
+                <span>Active ads vs CRM demand and deployed capital</span>
+              </div>
+              <div class="insight-list" id="geo-marketing-overlay"></div>
+            </article>
+            <article class="panel full">
+              <div class="panel-header">
+                <h3>Underserved Market Opportunity Scoring</h3>
+                <span>Small business population vs funded loan penetration — highest gap = greatest opportunity</span>
+              </div>
+              <div class="table-wrap" id="underserved-market-table"></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="page" data-page-panel="impact" aria-label="Impact and portfolio">
+          <div class="kpi-grid" id="impact-kpis"></div>
+          <article class="panel full impact-certification" id="impact-certification-panel">
+            <div class="panel-header">
+              <h3>Impact Reporting Controls</h3>
+              <span>Scope, integrity, coverage, provenance, and certification</span>
+            </div>
+            <div class="quality-list" id="impact-certification"></div>
+          </article>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>CDFI Demographics Report</h3>
+              <span>Running total — all partners — matches quarterly funder report format</span>
+              <button id="demographics-download-btn" type="button" style="margin-left:auto;padding:0.4rem 1rem;background:var(--gold-500);color:#1a1a1a;font-weight:700;font-size:0.8rem;border-radius:4px;text-decoration:none;white-space:nowrap;cursor:pointer;border:none;">Download CSV</button>
+            </div>
+            <div class="table-wrap" id="partner-demographics-table"></div>
+          </article>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Capital Recycling Waterfall</h3>
+              <span>Deployed → outstanding → repaid → charged off</span>
+            </div>
+            <div class="quality-list" id="impact-capital-recycling"></div>
+          </article>
+          <div class="grid two">
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Loan Size Distribution</h3>
+                <span>Small-dollar, mid-market, large</span>
+              </div>
+              <div class="bar-list" id="loan-size-distribution"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-header">
+                <h3>90+ DPD Watch List</h3>
+                <span>Partners with severe delinquency exposure</span>
+              </div>
+              <div class="quality-list" id="dpd-watch-list"></div>
+            </article>
+          </div>
+          <div class="grid three">
+            <article class="panel">
+              <div class="panel-header">
+                <h3>PAR30</h3>
+                <span>Portfolio at Risk — 30+ days past due</span>
+              </div>
+              <div class="quality-list" id="par-30-card"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-header">
+                <h3>PAR60</h3>
+                <span>Portfolio at Risk — 60+ days past due</span>
+              </div>
+              <div class="quality-list" id="par-60-card"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-header">
+                <h3>PAR90</h3>
+                <span>Portfolio at Risk — 90+ days past due (severe)</span>
+              </div>
+              <div class="quality-list" id="par-90-card"></div>
+            </article>
+          </div>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Vintage Curve — Months-Since-Origination</h3>
+              <span>Charge-off rate by cohort age in months — seasoning pattern across origination quarters</span>
+            </div>
+            <div class="chart" id="vintage-curve-chart"></div>
+          </article>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Vintage / Cohort Performance</h3>
+              <span>Origination quarter → current charge-off rate and outstanding ratio</span>
+            </div>
+            <div class="matrix" id="cohort-table"></div>
+          </article>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Monthly Origination Trend + Rolling 12-Month</h3>
+              <span>Monthly volume with smoothed trailing 12-month average</span>
+            </div>
+            <div class="chart" id="monthly-originations-trend"></div>
+          </article>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Quarterly Charge-off Trend</h3>
+              <span>Loss amount per quarter with charge-off rate overlay — 19-quarter history</span>
+            </div>
+            <div class="chart" id="chargeoff-quarterly-trend"></div>
+          </article>
+          <div class="grid three">
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Portfolio Runoff Projection</h3>
+                <span>Outstanding at current repayment run rate</span>
+              </div>
+              <div class="quality-list" id="runoff-projection"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Portfolio Aging</h3>
+                <span>Outstanding balance by DPD band</span>
+              </div>
+              <div class="bar-list" id="aging-band"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Demographic Reach</h3>
+                <span>Reported borrower fields</span>
+              </div>
+              <div class="bar-list" id="demographics"></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="page" data-page-panel="partners" aria-label="Partner health">
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Partner Health Score</h3>
+              <span>Impact, portfolio, CRM, TA, and compliance metadata</span>
+            </div>
+            <div class="table-wrap">
+              <table id="partner-health-table">
+                <thead>
+                  <tr>
+                    <th>Partner</th>
+                    <th>Score</th>
+                    <th>Tier</th>
+                    <th>CRM</th>
+                    <th>DPD</th>
+                    <th>Compliance</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </article>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Quarterly Covenant Compliance</h3>
+              <span>Financial ratio analysis, certificates, and waivers</span>
+            </div>
+            <div id="compliance-controls" style="display:flex;gap:12px;align-items:center;margin-bottom:12px;">
+              <select id="compliance-quarter-select" class="select-input" style="padding:4px 8px;border-radius:4px;border:1px solid var(--border);">
+                <option value="">Loading...</option>
+              </select>
+              <span id="compliance-summary-badges" style="display:flex;gap:8px;flex-wrap:wrap;"></span>
+            </div>
+            <div class="table-wrap">
+              <table id="compliance-table">
+                <thead>
+                  <tr>
+                    <th>CDFI</th>
+                    <th>Fin. Stmt</th>
+                    <th>Confidence</th>
+                    <th>Net Asset</th>
+                    <th>Current</th>
+                    <th>Chg Net Assets</th>
+                    <th>Op. Liquidity</th>
+                    <th>LLR</th>
+                    <th>Net CO</th>
+                    <th>Status</th>
+                    <th>Risk</th>
+                    <th>Certificate</th>
+                    <th>Waiver</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </article>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Partner Efficiency Deep Dive</h3>
+              <span>Charge-off rate, avg loan size, jobs per $1M, paydown velocity</span>
+            </div>
+            <div class="table-wrap">
+              <table id="partner-efficiency-table">
+                <thead>
+                  <tr>
+                    <th>Partner</th>
+                    <th>Loans</th>
+                    <th>Disbursed</th>
+                    <th>Avg Loan</th>
+                    <th>CO Rate</th>
+                    <th>Outstanding</th>
+                    <th>Outstanding %</th>
+                    <th>Jobs / $1M</th>
+                    <th>Max DPD</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </article>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Partner DSO Proxy &amp; Delinquent Share</h3>
+              <span>Estimated days-sales-outstanding (outstanding/disbursed × 12 months) and each partner's share of total 30+ DPD outstanding</span>
+            </div>
+            <div class="table-wrap">
+              <table id="partner-dso-table">
+                <thead>
+                  <tr>
+                    <th>Partner</th>
+                    <th>DSO Proxy (mo)</th>
+                    <th>Delinquent 30+ DPD</th>
+                    <th>Delinquent Share</th>
+                    <th>Signal</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </article>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Partner Growth Trajectories</h3>
+              <span>Quarter-over-quarter origination volume per partner</span>
+            </div>
+            <div class="chart" id="partner-growth-chart"></div>
+          </article>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Partner 4-Quadrant Matrix</h3>
+              <span>Volume (x) vs charge-off rate (y) — hover for details — size = outstanding balance</span>
+            </div>
+            <div class="chart" id="partner-matrix-chart"></div>
+            <div id="partner-matrix-tooltip" class="matrix-tooltip" style="display:none;"></div>
+          </article>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>TA ROI Correlation — Hours per Business vs Charge-off Rate</h3>
+              <span>Technical Assistance intensity vs credit performance by partner — higher TA hours should correlate with lower charge-off</span>
+            </div>
+            <div class="chart" id="ta-roi-scatter"></div>
+          </article>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Data Field Completeness by Partner</h3>
+              <span>State fill %, jobs fill %, demographic data presence — data accountability</span>
+            </div>
+            <div class="matrix" id="data-completeness-table"></div>
+          </article>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>CDFI Partner Rollup</h3>
+              <span>Impact, portfolio, TA</span>
+            </div>
+            <div class="table-wrap">
+              <table id="partner-table">
+                <thead>
+                  <tr>
+                    <th>Partner</th>
+                    <th>Loans</th>
+                    <th>Disbursed</th>
+                    <th>Outstanding</th>
+                    <th>TA Hours</th>
+                    <th>Max DPD</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+
+        <section class="page" data-page-panel="marketing" aria-label="Marketing intelligence">
+          <div class="kpi-grid" id="marketing-kpis"></div>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Google Ads Funnel</h3>
+              <span>Mar 3 - Mar 30, 2026, application milestones</span>
+            </div>
+            <div class="ladder-list" id="marketing-ladder"></div>
+          </article>
+          <div class="grid two">
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Marketing Diagnostics</h3>
+                <span>Account health and serving constraints</span>
+              </div>
+              <div class="insight-list" id="marketing-diagnostics"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Period Change Watch</h3>
+                <span>Compared with previous period</span>
+              </div>
+              <div class="insight-list" id="marketing-change-list"></div>
+            </article>
+          </div>
+          <div class="grid two">
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Campaign Performance</h3>
+                <span>CDFI and market</span>
+              </div>
+              <div class="matrix marketing-table" id="marketing-campaign-table"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Conversion Milestones</h3>
+                <span>GA4 page events</span>
+              </div>
+              <div class="bar-list" id="marketing-conversions"></div>
+            </article>
+          </div>
+          <div class="grid two">
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Market Performance</h3>
+                <span>Targeted locations</span>
+              </div>
+              <div class="bar-list" id="marketing-location-bars"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Search Intent Quality</h3>
+                <span>Top search terms</span>
+              </div>
+              <div class="matrix marketing-table" id="marketing-search-table"></div>
+            </article>
+          </div>
+          <div class="grid two">
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Keyword Efficiency</h3>
+                <span>Spend and milestone cost</span>
+              </div>
+              <div class="matrix marketing-table" id="marketing-keyword-table"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Ads to CRM Bridge</h3>
+                <span>Directional only</span>
+              </div>
+              <div class="insight-list" id="marketing-bridge"></div>
+            </article>
+          </div>
+          <div class="grid two">
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Device Efficiency</h3>
+                <span>Cost, clicks, and milestones</span>
+              </div>
+              <div class="matrix marketing-table" id="marketing-device-table"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Dayparting Pockets</h3>
+                <span>Visible high-click time blocks</span>
+              </div>
+              <div class="matrix marketing-table" id="marketing-daypart-table"></div>
+            </article>
+          </div>
+          <div class="grid two">
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Landing Page Routing</h3>
+                <span>Click concentration and routing risk</span>
+              </div>
+              <div class="matrix marketing-table" id="marketing-landing-table"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Auction Position</h3>
+                <span>Search impression share and competitors</span>
+              </div>
+              <div class="matrix marketing-table" id="marketing-auction-table"></div>
+            </article>
+          </div>
+          <div class="grid two">
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Search Theme Mining</h3>
+                <span>Intent taxonomy</span>
+              </div>
+              <div class="insight-list" id="marketing-theme-list"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Creative QA</h3>
+                <span>Ad strength and naming controls</span>
+              </div>
+              <div class="insight-list" id="marketing-creative-list"></div>
+            </article>
+          </div>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Analyst Notes</h3>
+              <span>API-ready model</span>
+            </div>
+            <div class="insight-list" id="marketing-next"></div>
+          </article>
+        </section>
+
+        <section class="page" data-page-panel="matcher" aria-label="Fee Reconciliation">
+          <div class="kpi-grid" id="matcher-kpis"></div>
+          <div class="grid two">
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Queue Status</h3>
+                <span>Reconciliation run</span>
+              </div>
+              <div class="bar-list" id="match-status"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Decision Bands</h3>
+                <span>Match confidence</span>
+              </div>
+              <div class="bar-list" id="match-bands"></div>
+            </article>
+          </div>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Invoice Export</h3>
+              <span>Confirmed + billed matches, per-CDFI invoice workbook</span>
+            </div>
+            <div class="matcher-toolbar">
+              <label>Billing quarter
+                <select id="matcher-invoice-quarter"></select>
+              </label>
+              <label>Include
+                <select id="matcher-invoice-statuses">
+                  <option value="confirmed" selected>Confirmed only (to be invoiced)</option>
+                  <option value="billed">Billed only (regenerate past invoices)</option>
+                  <option value="confirmed,billed">Confirmed + Billed (audit view)</option>
+                </select>
+              </label>
+              <button class="matcher-button" id="matcher-export-invoices">Export Invoices (.xlsx)</button>
+              <span class="matcher-toolbar-note" id="matcher-export-note"></span>
+            </div>
+          </article>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Match History &amp; Review Queue</h3>
+              <span id="matcher-table-meta">Loan-level matches from the local matcher history</span>
+            </div>
+            <div class="matcher-toolbar">
+              <label>Status
+                <select id="matcher-filter-status">
+                  <option value="new" selected>New (needs review)</option>
+                  <option value="">All statuses</option>
+                  <option value="confirmed">Confirmed</option>
+                  <option value="billed">Billed</option>
+                  <option value="rejected">Rejected</option>
+                </select>
+              </label>
+              <label>Band
+                <select id="matcher-filter-band">
+                  <option value="">All bands</option>
+                  <option value="auto_accept">Auto accept</option>
+                  <option value="review">Review</option>
+                  <option value="possible_match">Possible</option>
+                </select>
+              </label>
+              <label>CDFI
+                <select id="matcher-filter-cdfi"><option value="">All CDFIs</option></select>
+              </label>
+              <label>Quarter
+                <select id="matcher-filter-quarter"><option value="">All quarters</option></select>
+              </label>
+            </div>
+            <div class="table-wrap" id="matcher-table"></div>
+          </article>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Billing History</h3>
+              <span id="matcher-billing-meta">Everything explicitly marked billed, with amounts and invoice dates</span>
+            </div>
+            <div class="table-wrap" id="matcher-billing-history"></div>
+          </article>
+        </section>
+
+        <section class="page" data-page-panel="analytics" aria-label="Advanced analytics">
+          <div class="kpi-grid" id="advanced-kpis"></div>
+          <div class="grid two">
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Demand-to-Capital Gap</h3>
+                <span>States with CRM demand but low or no funded capital</span>
+              </div>
+              <div class="insight-list" id="demand-gap-analysis"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Portfolio Stress Watch</h3>
+                <span>30+, 60+, 90+ DPD and charge-off trajectory</span>
+              </div>
+              <div class="quality-list" id="portfolio-stress-watch"></div>
+            </article>
+          </div>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Origination Velocity History</h3>
+              <span>Monthly trend with quarterly signal annotation</span>
+            </div>
+            <div class="chart" id="analytics-monthly-trend"></div>
+          </article>
+          <div class="grid two">
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Capital Efficiency Ranking</h3>
+                <span>Jobs per $1M and avg loan size by partner</span>
+              </div>
+              <div class="bar-list" id="efficiency-ranking"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Equity Reach Score</h3>
+                <span>Minority, women, LMI share vs portfolio benchmarks</span>
+              </div>
+              <div class="quality-list" id="equity-reach"></div>
+            </article>
+          </div>
+          <div class="grid two">
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Data Source Freshness</h3>
+                <span>Live status — workbooks, RDS, compliance, matcher</span>
+              </div>
+              <div class="insight-list" id="analytics-modules"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Recent Snapshot Changes</h3>
+                <span>Day-over-day deltas from daily history cache</span>
+              </div>
+              <div class="insight-list" id="analytics-questions"></div>
+            </article>
+          </div>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>CRM to Funded Bridge</h3>
+              <span>Aggregate directional comparison</span>
+            </div>
+            <div class="quality-list" id="crm-bridge"></div>
+          </article>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Daily Snapshot History</h3>
+              <span>Local trend baseline — up to 60 days</span>
+            </div>
+            <div class="quality-list" id="history-summary"></div>
+          </article>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Historical Snapshot Comparison</h3>
+              <span>Compare any two snapshots — select dates to diff KPIs</span>
+            </div>
+            <div class="history-compare-controls" style="display:flex;gap:1rem;align-items:center;padding:0.75rem 1rem;flex-wrap:wrap;">
+              <label style="display:flex;flex-direction:column;gap:0.25rem;font-size:0.8rem;color:var(--text-muted);">
+                <span>From</span>
+                <select id="history-date-from" style="padding:0.4rem 0.6rem;background:var(--navy-800);border:1px solid var(--navy-600);color:var(--text-primary);border-radius:4px;"></select>
+              </label>
+              <label style="display:flex;flex-direction:column;gap:0.25rem;font-size:0.8rem;color:var(--text-muted);">
+                <span>To</span>
+                <select id="history-date-to" style="padding:0.4rem 0.6rem;background:var(--navy-800);border:1px solid var(--navy-600);color:var(--text-primary);border-radius:4px;"></select>
+              </label>
+              <button id="history-compare-btn" style="padding:0.5rem 1.25rem;background:var(--gold-500);color:#1a1a1a;font-weight:700;border:none;border-radius:4px;cursor:pointer;align-self:flex-end;">Compare</button>
+            </div>
+            <div class="quality-list" id="history-comparison-result"></div>
+          </article>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Origination Velocity Forecast</h3>
+              <span>2-quarter projection via linear regression on quarterly counts</span>
+            </div>
+            <div class="chart" id="velocity-forecast-chart"></div>
+          </article>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Rolling 12-Month Comparison</h3>
+              <span>Current 12 months vs prior 12 months — originations and disbursed</span>
+            </div>
+            <div class="quality-list" id="rolling-12m-compare"></div>
+          </article>
+          <div class="grid two">
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Seasonal Origination Pattern</h3>
+                <span>Average originations by calendar quarter (Q1–Q4)</span>
+              </div>
+              <div class="bar-list" id="seasonal-chart"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Demand-to-Supply Lag</h3>
+                <span>Monthly CRM pre-screen demand aligned with originations at T+3 and T+6</span>
+              </div>
+              <div class="chart" id="demand-supply-lag-chart"></div>
+            </article>
+          </div>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Cost Per Job Created</h3>
+              <span>Marketing ad spend bridged to funded loans and reported jobs — directional estimate</span>
+            </div>
+            <div class="quality-list" id="cost-per-job"></div>
+          </article>
+        </section>
+
+        <section class="page" data-page-panel="kpiGuide" aria-label="KPI formula guide">
+          <div class="panel full">
+            <div class="panel-header">
+              <div>
+                <h3>KPI Formula Guide</h3>
+                <span>Definitions, source of truth, formula, refresh, and caveat</span>
+              </div>
+              <label class="select-label">
+                <span>Category</span>
+                <select id="metric-category-filter"></select>
+              </label>
+            </div>
+            <div class="metric-guide" id="metric-guide"></div>
+          </div>
+        </section>
+
+        <section class="page" data-page-panel="quality" aria-label="Data quality">
+          <div class="grid two">
+            <article class="panel">
+            <div class="panel-header">
+              <h3>Refresh and Source Readiness</h3>
+              <span>Local files</span>
+            </div>
+              <div class="quality-list source-health-list" id="source-health-list"></div>
+              <div class="quality-divider"></div>
+              <div class="quality-list" id="source-list"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-header">
+                <h3>Warnings</h3>
+                <span>Needs attention</span>
+              </div>
+              <div class="quality-list" id="issue-list"></div>
+            </article>
+          </div>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Reporting Readiness</h3>
+              <span>Board, funder, and internal use</span>
+            </div>
+            <div class="quality-list" id="reporting-readiness"></div>
+          </article>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Automated Data Tests</h3>
+              <span>Dataset checks</span>
+            </div>
+            <div class="quality-list" id="data-tests"></div>
+          </article>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Audience Views</h3>
+              <span>Recommended export scope</span>
+            </div>
+            <div class="quality-list" id="audience-views"></div>
+          </article>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Compliance Document Expiration Flags</h3>
+              <span>Document type age analysis — stale = over 2 years old</span>
+            </div>
+            <div class="quality-list" id="compliance-expiration"></div>
+          </article>
+          <article class="panel full">
+            <div class="panel-header">
+              <h3>Partner Workbook Freshness</h3>
+              <span>Days since each Live Data workbook was last modified</span>
+            </div>
+            <div class="quality-list" id="workbook-freshness"></div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js?v=20260717a"></script>
+  </body>
+</html>

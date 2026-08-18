@@ -1,0 +1,816 @@
+{
+ "source": "Generated demo dataset",
+ "data_available": true,
+ "refresh_status": "sample",
+ "sample": true,
+ "dateRange": "Jul 18 - Aug 16, 2026",
+ "timezone": "Central Time",
+ "account": {
+  "name": "Community Lending Network"
+ },
+ "totals": {
+  "impressions": 1314,
+  "clicks": 189,
+  "interactions": 189,
+  "cost": 2365.34,
+  "conversions": 52,
+  "conversionRate": 0.2751,
+  "ctr": 0.1438,
+  "avgCpc": 12.52,
+  "costPerConversion": 45.49,
+  "enabledCampaignsInWindow": 3,
+  "visibleCampaigns": 24
+ },
+ "searchTermsTotal": {
+  "rows": 192,
+  "impressions": 207,
+  "clicks": 50,
+  "cost": 707.59,
+  "conversions": 12,
+  "ctr": 0.2415,
+  "avgCpc": 14.15,
+  "conversionRate": 0.24,
+  "costPerConversion": 58.97
+ },
+ "conversions": [
+  {
+   "action": "application_started",
+   "stage": "Early application milestone",
+   "category": "Page view",
+   "conversions": 24,
+   "weight": 1
+  },
+  {
+   "action": "contact_details_submitted",
+   "stage": "Contact info milestone",
+   "category": "Contact",
+   "conversions": 21,
+   "weight": 2
+  },
+  {
+   "action": "prequalification_result",
+   "stage": "Prequal result milestone",
+   "category": "Page view",
+   "conversions": 5,
+   "weight": 3
+  }
+ ],
+ "inactiveConversionActions": [
+  "Click to call from map listing",
+  "Click to call from ad",
+  "Mobile app installs"
+ ],
+ "campaigns": [
+  {
+   "campaign": "CCC - Travis County, TX",
+   "adGroup": "Travis County, TX - core terms",
+   "partner": "Cardinal Community Capital",
+   "market": "Travis County, TX",
+   "state": "TX",
+   "status": "Eligible",
+   "budget": 33,
+   "optimizationScore": 0.5627,
+   "impressions": 496,
+   "clicks": 76,
+   "ctr": 0.1532,
+   "cost": 844.22,
+   "conversionRate": 0.3289,
+   "conversions": 25,
+   "costPerConversion": 33.77,
+   "bidStrategy": "Maximize conversions"
+  },
+  {
+   "campaign": "HPF - Kings County, NY",
+   "adGroup": "Kings County, NY - core terms",
+   "partner": "Harbor Point Fund",
+   "market": "Kings County, NY",
+   "state": "NY",
+   "status": "Eligible",
+   "budget": 33,
+   "optimizationScore": 0.5566,
+   "impressions": 282,
+   "clicks": 28,
+   "ctr": 0.0993,
+   "cost": 425.13,
+   "conversionRate": 0.3571,
+   "conversions": 10,
+   "costPerConversion": 42.51,
+   "bidStrategy": "Maximize conversions"
+  },
+  {
+   "campaign": "RDF - Denver County, CO",
+   "adGroup": "Denver County, CO - core terms",
+   "partner": "Ridgeline Development Finance",
+   "market": "Denver County, CO",
+   "state": "CO",
+   "status": "Eligible",
+   "budget": 33,
+   "optimizationScore": 0.5386,
+   "impressions": 536,
+   "clicks": 85,
+   "ctr": 0.1586,
+   "cost": 1095.99,
+   "conversionRate": 0.2,
+   "conversions": 17,
+   "costPerConversion": 64.47,
+   "bidStrategy": "Maximize conversions"
+  }
+ ],
+ "pausedMarkets": [
+  "Northgate Community Lenders - King County, WA",
+  "Blue Mesa Capital - Maricopa County, AZ",
+  "Trailhead Business Capital - Cuyahoga County, OH",
+  "Silverbrook Fund - Milwaukee County, WI",
+  "Copperfield Community Finance - Fulton County, GA"
+ ],
+ "locations": [
+  {
+   "location": "Travis County, TX",
+   "campaign": "CCC - Travis County, TX",
+   "partner": "Cardinal Community Capital",
+   "state": "TX",
+   "impressions": 496,
+   "clicks": 76,
+   "ctr": 0.1532,
+   "avgCpc": 11.11,
+   "cost": 844.22,
+   "conversionRate": 0.3289,
+   "conversions": 25,
+   "costPerConversion": 33.77
+  },
+  {
+   "location": "Kings County, NY",
+   "campaign": "HPF - Kings County, NY",
+   "partner": "Harbor Point Fund",
+   "state": "NY",
+   "impressions": 282,
+   "clicks": 28,
+   "ctr": 0.0993,
+   "avgCpc": 15.18,
+   "cost": 425.13,
+   "conversionRate": 0.3571,
+   "conversions": 10,
+   "costPerConversion": 42.51
+  },
+  {
+   "location": "Denver County, CO",
+   "campaign": "RDF - Denver County, CO",
+   "partner": "Ridgeline Development Finance",
+   "state": "CO",
+   "impressions": 536,
+   "clicks": 85,
+   "ctr": 0.1586,
+   "avgCpc": 12.89,
+   "cost": 1095.99,
+   "conversionRate": 0.2,
+   "conversions": 17,
+   "costPerConversion": 64.47
+  }
+ ],
+ "keywords": [
+  {
+   "keyword": "\"business loan bad credit\"",
+   "campaign": "HPF - Kings County, NY",
+   "impressions": 229,
+   "clicks": 25,
+   "cost": 372.27,
+   "conversions": 15,
+   "costPerConversion": 24.82,
+   "conversionRate": 0.6
+  },
+  {
+   "keyword": "\"startup business funding\"",
+   "campaign": "HPF - Kings County, NY",
+   "impressions": 131,
+   "clicks": 19,
+   "cost": 226.9,
+   "conversions": 12,
+   "costPerConversion": 18.91,
+   "conversionRate": 0.6316
+  },
+  {
+   "keyword": "\"cdfi business loan\"",
+   "campaign": "HPF - Kings County, NY",
+   "impressions": 156,
+   "clicks": 19,
+   "cost": 296.5,
+   "conversions": 10,
+   "costPerConversion": 29.65,
+   "conversionRate": 0.5263
+  },
+  {
+   "keyword": "\"small business loan\"",
+   "campaign": "HPF - Kings County, NY",
+   "impressions": 197,
+   "clicks": 16,
+   "cost": 243.12,
+   "conversions": 9,
+   "costPerConversion": 27.01,
+   "conversionRate": 0.5625
+  },
+  {
+   "keyword": "\"business loan no collateral\"",
+   "campaign": "CCC - Travis County, TX",
+   "impressions": 114,
+   "clicks": 18,
+   "cost": 212.27,
+   "conversions": 7,
+   "costPerConversion": 30.32,
+   "conversionRate": 0.3889
+  },
+  {
+   "keyword": "\"microloan for small business\"",
+   "campaign": "CCC - Travis County, TX",
+   "impressions": 133,
+   "clicks": 13,
+   "cost": 180.69,
+   "conversions": 0,
+   "costPerConversion": 0.0,
+   "conversionRate": 0.0
+  },
+  {
+   "keyword": "\"minority business loan\"",
+   "campaign": "CCC - Travis County, TX",
+   "impressions": 119,
+   "clicks": 6,
+   "cost": 89.28,
+   "conversions": 0,
+   "costPerConversion": 0.0,
+   "conversionRate": 0.0
+  },
+  {
+   "keyword": "\"women owned business loan\"",
+   "campaign": "HPF - Kings County, NY",
+   "impressions": 107,
+   "clicks": 11,
+   "cost": 167.51,
+   "conversions": 0,
+   "costPerConversion": 0.0,
+   "conversionRate": 0.0
+  }
+ ],
+ "searchTerms": [
+  {
+   "term": "small business loan near me",
+   "campaign": "HPF - Kings County, NY",
+   "clicks": 4,
+   "impressions": 24,
+   "cost": 57.85,
+   "conversions": 3,
+   "costPerConversion": 19.28
+  },
+  {
+   "term": "community lender small business",
+   "campaign": "RDF - Denver County, CO",
+   "clicks": 6,
+   "impressions": 18,
+   "cost": 70.11,
+   "conversions": 3,
+   "costPerConversion": 23.37
+  },
+  {
+   "term": "business grants for startups",
+   "campaign": "RDF - Denver County, CO",
+   "clicks": 9,
+   "impressions": 27,
+   "cost": 140.58,
+   "conversions": 2,
+   "costPerConversion": 70.29
+  },
+  {
+   "term": "nonprofit business lender",
+   "campaign": "HPF - Kings County, NY",
+   "clicks": 6,
+   "impressions": 30,
+   "cost": 74.27,
+   "conversions": 2,
+   "costPerConversion": 37.13
+  },
+  {
+   "term": "how to get a business loan",
+   "campaign": "RDF - Denver County, CO",
+   "clicks": 7,
+   "impressions": 42,
+   "cost": 95.2,
+   "conversions": 1,
+   "costPerConversion": 95.2
+  },
+  {
+   "term": "first time business loan",
+   "campaign": "CCC - Travis County, TX",
+   "clicks": 4,
+   "impressions": 20,
+   "cost": 62.16,
+   "conversions": 1,
+   "costPerConversion": 62.16
+  },
+  {
+   "term": "microloan lenders",
+   "campaign": "HPF - Kings County, NY",
+   "clicks": 4,
+   "impressions": 16,
+   "cost": 53.03,
+   "conversions": 0,
+   "costPerConversion": 0.0
+  },
+  {
+   "term": "business loan without collateral",
+   "campaign": "RDF - Denver County, CO",
+   "clicks": 10,
+   "impressions": 30,
+   "cost": 154.39,
+   "conversions": 0,
+   "costPerConversion": 0.0
+  }
+ ],
+ "devices": [
+  {
+   "device": "Mobile phones",
+   "campaign": "CCC - Travis County, TX",
+   "partner": "Cardinal Community Capital",
+   "clicks": 42,
+   "impressions": 287,
+   "ctr": 0.1463,
+   "avgCpc": 13.76,
+   "cost": 578.09,
+   "conversionRate": 0.4524,
+   "conversions": 19,
+   "costPerConversion": 30.43
+  },
+  {
+   "device": "Mobile phones",
+   "campaign": "HPF - Kings County, NY",
+   "partner": "Harbor Point Fund",
+   "clicks": 16,
+   "impressions": 163,
+   "ctr": 0.0982,
+   "avgCpc": 14.23,
+   "cost": 227.63,
+   "conversionRate": 0.3125,
+   "conversions": 5,
+   "costPerConversion": 45.53
+  },
+  {
+   "device": "Mobile phones",
+   "campaign": "RDF - Denver County, CO",
+   "partner": "Ridgeline Development Finance",
+   "clicks": 54,
+   "impressions": 310,
+   "ctr": 0.1742,
+   "avgCpc": 18.2,
+   "cost": 982.69,
+   "conversionRate": 0.2037,
+   "conversions": 11,
+   "costPerConversion": 89.34
+  },
+  {
+   "device": "Computers",
+   "campaign": "CCC - Travis County, TX",
+   "partner": "Cardinal Community Capital",
+   "clicks": 24,
+   "impressions": 188,
+   "ctr": 0.1277,
+   "avgCpc": 19.68,
+   "cost": 472.37,
+   "conversionRate": 0.0,
+   "conversions": 0,
+   "costPerConversion": 0.0
+  },
+  {
+   "device": "Computers",
+   "campaign": "HPF - Kings County, NY",
+   "partner": "Harbor Point Fund",
+   "clicks": 10,
+   "impressions": 107,
+   "ctr": 0.0935,
+   "avgCpc": 17.43,
+   "cost": 174.31,
+   "conversionRate": 0.2,
+   "conversions": 2,
+   "costPerConversion": 87.16
+  },
+  {
+   "device": "Computers",
+   "campaign": "RDF - Denver County, CO",
+   "partner": "Ridgeline Development Finance",
+   "clicks": 31,
+   "impressions": 203,
+   "ctr": 0.1527,
+   "avgCpc": 18.43,
+   "cost": 571.31,
+   "conversionRate": 0.2581,
+   "conversions": 8,
+   "costPerConversion": 71.41
+  },
+  {
+   "device": "Tablets",
+   "campaign": "CCC - Travis County, TX",
+   "partner": "Cardinal Community Capital",
+   "clicks": 3,
+   "impressions": 19,
+   "ctr": 0.1579,
+   "avgCpc": 15.92,
+   "cost": 47.76,
+   "conversionRate": 0.0,
+   "conversions": 0,
+   "costPerConversion": 0.0
+  },
+  {
+   "device": "Tablets",
+   "campaign": "HPF - Kings County, NY",
+   "partner": "Harbor Point Fund",
+   "clicks": 1,
+   "impressions": 11,
+   "ctr": 0.0909,
+   "avgCpc": 19.93,
+   "cost": 19.93,
+   "conversionRate": 0.0,
+   "conversions": 0,
+   "costPerConversion": 0.0
+  },
+  {
+   "device": "Tablets",
+   "campaign": "RDF - Denver County, CO",
+   "partner": "Ridgeline Development Finance",
+   "clicks": 2,
+   "impressions": 21,
+   "ctr": 0.0952,
+   "avgCpc": 13.72,
+   "cost": 27.45,
+   "conversionRate": 0.5,
+   "conversions": 1,
+   "costPerConversion": 27.45
+  }
+ ],
+ "dayparts": [
+  {
+   "day": "Thursday",
+   "hour": "1 PM - 2 PM",
+   "campaign": "RDF - Denver County, CO",
+   "clicks": 5,
+   "impressions": 20,
+   "ctr": 0.25,
+   "avgCpc": 14.25,
+   "cost": 71.27,
+   "conversionRate": 0.4,
+   "conversions": 2,
+   "costPerConversion": 35.63
+  },
+  {
+   "day": "Thursday",
+   "hour": "9 AM - 10 AM",
+   "campaign": "CCC - Travis County, TX",
+   "clicks": 5,
+   "impressions": 10,
+   "ctr": 0.5,
+   "avgCpc": 7.55,
+   "cost": 37.74,
+   "conversionRate": 0.4,
+   "conversions": 2,
+   "costPerConversion": 18.87
+  },
+  {
+   "day": "Monday",
+   "hour": "3 PM - 4 PM",
+   "campaign": "RDF - Denver County, CO",
+   "clicks": 4,
+   "impressions": 24,
+   "ctr": 0.1667,
+   "avgCpc": 16.25,
+   "cost": 65.01,
+   "conversionRate": 0.5,
+   "conversions": 2,
+   "costPerConversion": 32.51
+  },
+  {
+   "day": "Tuesday",
+   "hour": "1 PM - 2 PM",
+   "campaign": "RDF - Denver County, CO",
+   "clicks": 3,
+   "impressions": 18,
+   "ctr": 0.1667,
+   "avgCpc": 9.6,
+   "cost": 28.81,
+   "conversionRate": 0.6667,
+   "conversions": 2,
+   "costPerConversion": 14.4
+  },
+  {
+   "day": "Monday",
+   "hour": "6 PM - 7 PM",
+   "campaign": "CCC - Travis County, TX",
+   "clicks": 3,
+   "impressions": 18,
+   "ctr": 0.1667,
+   "avgCpc": 17.4,
+   "cost": 52.21,
+   "conversionRate": 0.3333,
+   "conversions": 1,
+   "costPerConversion": 52.21
+  },
+  {
+   "day": "Sunday",
+   "hour": "10 AM - 11 AM",
+   "campaign": "HPF - Kings County, NY",
+   "clicks": 3,
+   "impressions": 6,
+   "ctr": 0.5,
+   "avgCpc": 19.97,
+   "cost": 59.92,
+   "conversionRate": 0.3333,
+   "conversions": 1,
+   "costPerConversion": 59.92
+  },
+  {
+   "day": "Saturday",
+   "hour": "7 AM - 8 AM",
+   "campaign": "HPF - Kings County, NY",
+   "clicks": 2,
+   "impressions": 10,
+   "ctr": 0.2,
+   "avgCpc": 19.2,
+   "cost": 38.41,
+   "conversionRate": 0.5,
+   "conversions": 1,
+   "costPerConversion": 38.41
+  },
+  {
+   "day": "Sunday",
+   "hour": "3 PM - 4 PM",
+   "campaign": "RDF - Denver County, CO",
+   "clicks": 2,
+   "impressions": 4,
+   "ctr": 0.5,
+   "avgCpc": 15.38,
+   "cost": 30.76,
+   "conversionRate": 1.5,
+   "conversions": 3,
+   "costPerConversion": 10.25
+  },
+  {
+   "day": "Thursday",
+   "hour": "3 PM - 4 PM",
+   "campaign": "HPF - Kings County, NY",
+   "clicks": 2,
+   "impressions": 6,
+   "ctr": 0.3333,
+   "avgCpc": 13.95,
+   "cost": 27.89,
+   "conversionRate": 0.0,
+   "conversions": 0,
+   "costPerConversion": 0.0
+  },
+  {
+   "day": "Wednesday",
+   "hour": "11 AM - 12 PM",
+   "campaign": "HPF - Kings County, NY",
+   "clicks": 2,
+   "impressions": 4,
+   "ctr": 0.5,
+   "avgCpc": 14.36,
+   "cost": 28.71,
+   "conversionRate": 0.5,
+   "conversions": 1,
+   "costPerConversion": 28.71
+  }
+ ],
+ "landingPages": [
+  {
+   "page": "Primary campaign landing page",
+   "url": "lendingnetwork.example/apply",
+   "selectedBy": "Advertiser selected",
+   "clicks": 177,
+   "impressions": 1314,
+   "ctr": 0.1347,
+   "avgCpc": 13.09,
+   "cost": 2316.84
+  },
+  {
+   "page": "Application start",
+   "url": "lendingnetwork.example/apply/start",
+   "selectedBy": "Advertiser selected",
+   "clicks": 5,
+   "impressions": 514,
+   "ctr": 0.0038,
+   "avgCpc": 14.23,
+   "cost": 71.17
+  },
+  {
+   "page": "How it works",
+   "url": "lendingnetwork.example/how-it-works",
+   "selectedBy": "Advertiser selected",
+   "clicks": 1,
+   "impressions": 490,
+   "ctr": 0.0008,
+   "avgCpc": 12.84,
+   "cost": 12.84
+  },
+  {
+   "page": "Find a lender",
+   "url": "lendingnetwork.example/lenders",
+   "selectedBy": "Advertiser selected",
+   "clicks": 1,
+   "impressions": 933,
+   "ctr": 0.0008,
+   "avgCpc": 12.5,
+   "cost": 12.5
+  },
+  {
+   "page": "Education",
+   "url": "lendingnetwork.example/learn",
+   "selectedBy": "Advertiser selected",
+   "clicks": 0,
+   "impressions": 783,
+   "ctr": 0.0,
+   "avgCpc": 0.0,
+   "cost": 0.0
+  }
+ ],
+ "auctionInsights": [
+  {
+   "domain": "You",
+   "impressionShare": 0.8161,
+   "overlapRate": null,
+   "positionAboveRate": null,
+   "topOfPageRate": 0.8821,
+   "absoluteTopOfPageRate": 0.8462,
+   "outrankingShare": null
+  },
+  {
+   "domain": "capitalbridge.example",
+   "impressionShare": 0.1219,
+   "impressionShareLabel": null,
+   "overlapRate": 0.1317,
+   "positionAboveRate": 0.0733,
+   "topOfPageRate": 0.8352,
+   "absoluteTopOfPageRate": 0.1278,
+   "outrankingShare": 0.7845
+  },
+  {
+   "domain": "mainstreetfunding.example",
+   "impressionShare": 0.1388,
+   "impressionShareLabel": null,
+   "overlapRate": 0.1796,
+   "positionAboveRate": 0.1113,
+   "topOfPageRate": 0.7355,
+   "absoluteTopOfPageRate": 0.0566,
+   "outrankingShare": 0.7643
+  },
+  {
+   "domain": "quickbizloans.example",
+   "impressionShare": 0.1714,
+   "impressionShareLabel": null,
+   "overlapRate": 0.0679,
+   "positionAboveRate": 0.0443,
+   "topOfPageRate": 0.6765,
+   "absoluteTopOfPageRate": 0.0517,
+   "outrankingShare": 0.7848
+  },
+  {
+   "domain": "fundingcompare.example",
+   "impressionShare": 0.1469,
+   "impressionShareLabel": null,
+   "overlapRate": 0.1887,
+   "positionAboveRate": 0.0507,
+   "topOfPageRate": 0.6692,
+   "absoluteTopOfPageRate": 0.1346,
+   "outrankingShare": 0.7648
+  },
+  {
+   "domain": "smallbizadvisor.example",
+   "impressionShare": null,
+   "impressionShareLabel": "< 10%",
+   "overlapRate": 0.0749,
+   "positionAboveRate": 0.1364,
+   "topOfPageRate": 0.6393,
+   "absoluteTopOfPageRate": 0.0948,
+   "outrankingShare": 0.7721
+  },
+  {
+   "domain": "lenderdirectory.example",
+   "impressionShare": null,
+   "impressionShareLabel": "< 10%",
+   "overlapRate": 0.1622,
+   "positionAboveRate": 0.0724,
+   "topOfPageRate": 0.7665,
+   "absoluteTopOfPageRate": 0.0489,
+   "outrankingShare": 0.7778
+  },
+  {
+   "domain": "growthcapital.example",
+   "impressionShare": null,
+   "impressionShareLabel": "< 10%",
+   "overlapRate": 0.1384,
+   "positionAboveRate": 0.1294,
+   "topOfPageRate": 0.7255,
+   "absoluteTopOfPageRate": 0.0792,
+   "outrankingShare": 0.7781
+  }
+ ],
+ "periodComparison": {
+  "previousRange": "Jun 18 - Jul 17, 2026",
+  "impressionsDelta": -67,
+  "costDelta": 71.01,
+  "conversionsDelta": -12.04,
+  "biggestChanges": [
+   {
+    "campaign": "RDF - Denver County, CO",
+    "costDelta": 388.69,
+    "percentDelta": 0.4036,
+    "status": "Active spend up"
+   },
+   {
+    "campaign": "TBC - Cuyahoga County, OH",
+    "costDelta": -372.51,
+    "percentDelta": -1,
+    "status": "Paused / spend stopped"
+   },
+   {
+    "campaign": "BMC - Maricopa County, AZ",
+    "costDelta": -351.68,
+    "percentDelta": -1,
+    "status": "Paused / spend stopped"
+   },
+   {
+    "campaign": "HPF - Kings County, NY",
+    "costDelta": 310.85,
+    "percentDelta": 0.4238,
+    "status": "Active spend up"
+   },
+   {
+    "campaign": "CCC - Travis County, TX",
+    "costDelta": 268.43,
+    "percentDelta": 0.4371,
+    "status": "Active spend up"
+   },
+   {
+    "campaign": "NCL - King County, WA",
+    "costDelta": -232.34,
+    "percentDelta": -1,
+    "status": "Paused / spend stopped"
+   }
+  ],
+  "googleInsight": "Reported conversions fell across enabled campaigns in the comparison window, driven mostly by campaigns that were paused part-way through it."
+ },
+ "diagnostics": [
+  {
+   "label": "Advertiser verification",
+   "status": "Action required",
+   "detail": "Account verification is outstanding and will stop delivery if it is not completed."
+  },
+  {
+   "label": "Campaign serving",
+   "status": "Limited",
+   "detail": "All enabled campaigns are marked Eligible (Limited) and are targeting fewer searches than their budget allows."
+  },
+  {
+   "label": "Optimization score",
+   "status": "54.2%",
+   "detail": "Enabled campaigns are clustered in the low fifties."
+  },
+  {
+   "label": "Performance Max recommendation",
+   "status": "+9% estimated",
+   "detail": "Surfaced by the platform as a suggestion. Treat it as a test to run, not a decision the dashboard is making."
+  },
+  {
+   "label": "Ad strength",
+   "status": "Average",
+   "detail": "Responsive search ads are rated Average across enabled campaigns."
+  }
+ ],
+ "searchThemes": [
+  {
+   "theme": "Loan intent",
+   "examples": "small business loan; business loan near me; microloan lenders",
+   "read": "Core demand. Compare against CRM inquiry volume by state and funded outcomes before scaling spend."
+  },
+  {
+   "theme": "Grant intent",
+   "examples": "business grants for startups; small business grants",
+   "read": "High volume, poor fit for a lending product. Watch milestone depth rather than raw conversions."
+  },
+  {
+   "theme": "Credit-constrained",
+   "examples": "business loan bad credit; no collateral business loan",
+   "read": "Mission-aligned but needs clear eligibility language so the landing page does not overpromise."
+  },
+  {
+   "theme": "Demographic-specific",
+   "examples": "minority business loan; women owned business loan",
+   "read": "Aligns with the demographic reach reported on the impact page. Keep segmented so performance is readable."
+  },
+  {
+   "theme": "Adjacent use cases",
+   "examples": "commercial property loan; farm equipment financing",
+   "read": "Segment separately so out-of-scope inquiries do not inflate application-page milestones."
+  }
+ ],
+ "creative": {
+  "adType": "Responsive search ad",
+  "visibleStrength": "Average",
+  "activeRows": 3,
+  "sharedLandingPath": "lendingnetwork.example/apply",
+  "primaryMessage": "Connect small business owners with community lenders and advisory partners."
+ }
+}
