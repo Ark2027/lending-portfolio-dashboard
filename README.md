@@ -74,13 +74,22 @@ python tools/generate_demo_data.py
 
 ## Running it
 
-Any static file server will do. There's nothing to install.
+Nothing to install and no build step. Any static file server works.
 
 ```bash
+git clone https://github.com/Ark2027/lending-portfolio-dashboard
+cd lending-portfolio-dashboard
+
 python -m http.server 8412 --directory src
 ```
 
-Then open `http://localhost:8412`.
+Then open **http://localhost:8412**.
+
+To rebuild the demo dataset from scratch, which needs Python 3.11 or newer:
+
+```bash
+python tools/generate_demo_data.py
+```
 
 ## Tests
 
